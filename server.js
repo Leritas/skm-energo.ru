@@ -6,12 +6,14 @@ app.use(express.static(`${__dirname}/public`))
 
 app.get('/', (req,res) => {
     res.render("index", {
-        title: 'СКМ - Энергосервис'
+        title: 'СКМ-Энергосервис'
     })
 })
 
-app.get('/manufacturers', (req,res) => {
-    res.render('mfacrurers')
+app.get('/mfacturers', (req,res) => {
+    res.render('mfacturers', {
+        title: 'Производители | СКМ-Энергосервис'
+    })
 })
 
 const productRouter = require('./routes/product')

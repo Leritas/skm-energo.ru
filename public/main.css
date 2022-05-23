@@ -35,7 +35,6 @@ html:focus-within {
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
 }
 
 /* A elements that don't have a class get default styles */
@@ -74,5 +73,206 @@ select {
             transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: lightgrey;
+  text-align: center;
+  font-family: 'Lora', serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.lightning > img {
+  height: 40vh;
+  pointer-events: none;
+}
+
+.left {
+  position: absolute;
+  left: -50px;
+  top: -20px;
+}
+
+.right {
+  position: absolute;
+  right: -10px;
+}
+
+.bgheader {
+  background: white;
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  border-bottom: 1px solid grey;
+}
+
+header {
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  color: #ab0000;
+  height: 10vh;
+  width: 100%;
+  white-space: nowrap;
+}
+
+header a {
+  color: #ab0000;
+}
+
+header a:hover {
+  color: black;
+}
+
+header .logo {
+  height: 90%;
+  margin-left: 10%;
+  cursor: pointer;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+}
+
+header nav .menu {
+  font-size: 1.2em;
+  margin: .5em;
+  font-weight: bold;
+}
+
+header nav .dropdown {
+  position: relative;
+  height: 100%;
+  line-height: 10vh;
+}
+
+header nav .dropdown-level-one {
+  position: absolute;
+  overflow: hidden;
+  top: 10vh;
+  left: 0;
+  min-width: 15em;
+  max-height: 0;
+  background: white;
+  border: 0px solid grey;
+  -webkit-transition: max-height 300ms ease-in-out;
+  transition: max-height 300ms ease-in-out;
+}
+
+header nav .dropdown-item {
+  line-height: 2.5;
+  border-bottom: 1px solid grey;
+  color: #ab0000;
+}
+
+header nav .dropdown-arrow {
+  display: inline;
+}
+
+header nav .dropdown-arrow::before {
+  content: '\2B9F';
+  display: inline;
+}
+
+header nav .dropdown-arrow::after {
+  content: '\2B9D';
+  display: none;
+}
+
+header nav .dropdown:hover .dropdown-level-one {
+  max-height: 50em;
+}
+
+header nav .dropdown:hover .dropdown-arrow::before {
+  display: none;
+}
+
+header nav .dropdown:hover .dropdown-arrow::after {
+  display: inline;
+}
+
+header .search {
+  background: lightgrey;
+  border-radius: 20px;
+  border: 0px;
+  padding: 0.3em;
+  padding-right: 0;
+  margin-right: 10%;
+}
+
+header .search input {
+  background: transparent;
+  border: 0px;
+  margin-left: 1em;
+  padding: 0px;
+  height: 100%;
+  outline: 0px;
+  caret-color: #ab0000;
+}
+
+header .search button {
+  background: transparent;
+  border: 0px;
+  height: 100%;
+  margin-right: 0.5em;
+  cursor: pointer;
+  color: #ab0000;
+  text-align: left;
+}
+
+.lep {
+  width: 100%;
+  height: 85vh;
+  padding-top: 10vh;
+}
+
+.lep img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  pointer-events: none;
+}
+
+.wrapper {
+  width: 90%;
+  margin: auto;
+}
+
+.call {
+  position: fixed;
+  right: 1.5em;
+  bottom: 1.5em;
+}
+
+.call img {
+  width: 5em;
+  height: 5em;
+  -webkit-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.call img:hover {
+  width: 7em;
+  height: 7em;
 }
 /*# sourceMappingURL=main.css.map */
