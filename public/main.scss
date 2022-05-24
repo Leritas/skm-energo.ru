@@ -77,9 +77,11 @@ select {
 //end of defaults
 html {
   overflow-y: scroll;
+  width: 100%;
 }
 
 body {
+  width: 100%;
   background: lightgrey;
   text-align: center;
   font-family: 'Lora', serif;
@@ -89,20 +91,24 @@ a {
   text-decoration: none;
 }
 
-.lightning>img {
-  height: 40vh;
-  pointer-events: none;
-}
-
-.left {
+.lightning {
   position: absolute;
-  left: -50px;
-  top: -20px;
-}
+  z-index: 9;
+  img {
+    height: 40vh;
+    pointer-events: none;
+    user-select: none;
+  }
 
-.right {
-  position: absolute;
-  right: -10px;
+  &.left {
+    left: -50px;
+    top: -20px;
+  }
+
+  &.right {
+    top: -10px;
+    right: 0;
+  }
 }
 
 .bgheader {
@@ -111,6 +117,7 @@ a {
   height: 10vh;
   position: fixed;
   border-bottom: 1px solid grey;
+  z-index: 8;
 }
 
 header {
@@ -122,6 +129,7 @@ header {
   height: 10vh;
   width: 100%;
   white-space: nowrap;
+  z-index: 10;
 
   a {
     color: $accent-red;
@@ -143,7 +151,7 @@ header {
     margin-left: auto;
 
     .menu {
-      font-size: 18px;
+      font-size: 16px;
       margin: .5em;
       font-weight: bold;
     }
@@ -182,7 +190,7 @@ header {
       .mersen {
         border-right: 1px solid grey;
         border-bottom: 2px solid white;
-        
+
       }
 
       &-arrow {
@@ -221,6 +229,19 @@ header {
     }
   }
 
+  .desktop {
+    
+  }
+  .black-bg-mobile {
+    display: none;
+    position: absolute;
+    right: 0;top: 0;bottom: 0;left: 0;
+    background: rgba(0,0,0,0.3);
+  }
+  .mobile {
+
+  }
+
   .search {
     background: lightgrey;
     border-radius: 20px;
@@ -256,23 +277,16 @@ header {
 
 }
 
-.lep {
-  width: 100%;
-  height: 85vh;
+.main {
   padding-top: 10vh;
+  width: 100%;
+  min-height: 90vh;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
-  }
 }
 
 .wrapper {
   width: 90%;
   margin: auto;
-
 }
 
 .call {
@@ -291,4 +305,9 @@ header {
       height: 7em;
     }
   }
+}
+
+.pdf-big-size {
+  width: 100%;
+  height: 80vh;
 }

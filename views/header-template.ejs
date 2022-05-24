@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/main.css">
     <link rel="stylesheet" type="text/css" href="/media.css">
+        <%- locals.headLink %> 
     <script src="script.js" defer></script>
     <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -26,17 +27,15 @@
 <body>
 
     <div class="bgheader"></div>
-    <div class="lightning left"><img src="/images/leftl2.png" alt=""></div>
-    <div class="lightning right"><img src="/images/rightl.png" alt=""></div>
     <header>
         <img src="/images/ontransperent.png" alt="лого" class="logo">
 
-        <nav>
+        <nav class="desktop">
             <div class="menu dropdown"><a href="/products">Продукция<div class="dropdown-arrow"></div></a>
                 <div class="dropdown-level-one dropdown-two">
                     <div class="dropdown-item mersen"><a href="">Mersen</a></div>
-                    <div class="dropdown-item"><a href="">Casram</a></div>
-                    <div class="dropdown-item"><a href="">Lampar</a></div>
+                    <div class="dropdown-item"><a href="/casram">Casram</a></div>
+                    <div class="dropdown-item"><a href="/lampar">Lampar</a></div>
                     <div class="flex-break"></div>
                     <div class="dropdown-level-two">
                         <div class="dropdown-item"><a href="">Предохранители, держатели и аксессуары</a></div>
@@ -52,7 +51,7 @@
                 </div>
             </div>
             <a href="">
-                <div class="menu">Виды осуществляемых работ</div>
+                <div class="menu">Виды работ</div>
             </a>
             <a href="">
                 <div class="menu">Новости</div>
@@ -67,25 +66,37 @@
             <input type="text" placeholder="Найти товар">
             <button>Поиск</button>
         </form>
-        <div class="mobmenu">
-            <img src="/images/list.png" alt="">
-            <div class="mobdd1level">
-                <div class="mddmenu mddl1"><a href="/mfacturers"></a> Продукция и производители&#11167;
-                    <div class="mobdd2level">
-                        <div class="mddmenu">Mersen&#11167;</div>
-                        <div class="mddmenu">Casram</div>
-                        <div class="mddmenu">Lampar</div>
+        
+        <!-- <div class="black-bg-mobile"></div>
+        <nav class="mobile">
+            <div class="menu dropdown"><a href="/products">Продукция<div class="dropdown-arrow"></div></a>
+                <div class="dropdown-level-one dropdown-two">
+                    <div class="dropdown-item mersen"><a href="">Mersen</a></div>
+                    <div class="dropdown-item"><a href="/casram">Casram</a></div>
+                    <div class="dropdown-item"><a href="/lampar">Lampar</a></div>
+                    <div class="flex-break"></div>
+                    <div class="dropdown-level-two">
+                        <div class="dropdown-item"><a href="">Предохранители, держатели и аксессуары</a></div>
+                        <div class="dropdown-item"><a href="">Устройства защиты от перенапряжения</a></div>
+                        <div class="dropdown-item"><a href="">Низковольтные рубильники</a></div>
+                        <div class="dropdown-item"><a href="">Высоковольтные разъединители и контакторы</a></div>
+                        <div class="dropdown-item"><a href="">Охлаждение для силовой электроники</a></div>
+                        <div class="dropdown-item"><a href="">Ламинированные шины</a></div>
+                        <div class="dropdown-item"><a href="">Оборудование для железнодорожного транспорта</a></div>
+                        <div class="dropdown-item"><a href="">Электронные системы управления энергоснабжением</a></div>
+                        <div class="dropdown-item"><a href="">Кабельные распределительные устройства</a></div>
                     </div>
                 </div>
-                <a href="">
-                    <div class="mddmenu">Виды осуществляемых работ</div>
-                </a>
-                <a href="">
-                    <div class="mddmenu">Новости</div>
-                </a>
-                <a href="">
-                    <div class="mddmenu">Контакты</div>
-                </a>
             </div>
-        </div>
+            <a href="">
+                <div class="menu">Виды работ</div>
+            </a>
+            <a href="">
+                <div class="menu">Новости</div>
+            </a>
+
+            <a href="">
+                <div class="menu">Контакты</div>
+            </a>
+        </nav> -->
     </header>
