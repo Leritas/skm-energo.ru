@@ -91,30 +91,6 @@ a {
   text-decoration: none;
 }
 
-.lightning {
-  position: absolute;
-  z-index: 9;
-}
-
-.lightning img {
-  height: 40vh;
-  pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.lightning.left {
-  left: -50px;
-  top: -20px;
-}
-
-.lightning.right {
-  top: -10px;
-  right: 0;
-}
-
 .bgheader {
   background: white;
   width: 100%;
@@ -154,14 +130,11 @@ header .logo {
   cursor: pointer;
 }
 
-header nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-left: auto;
+header .logo-mobile {
+  display: none;
+  height: 90%;
+  margin-left: 1%;
+  cursor: pointer;
 }
 
 header nav .menu {
@@ -170,25 +143,15 @@ header nav .menu {
   font-weight: bold;
 }
 
-header nav .dropdown {
-  position: relative;
-  height: 100%;
-  line-height: 10vh;
-}
-
 header nav .dropdown-level-one {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  position: absolute;
   overflow: hidden;
-  top: 10vh;
-  left: -14em;
   max-height: 0;
   background: white;
-  border: 0px solid grey;
   -webkit-transition: max-height 300ms ease-in-out;
   transition: max-height 300ms ease-in-out;
 }
@@ -228,33 +191,6 @@ header nav .dropdown-arrow::after {
   display: none;
 }
 
-header nav .dropdown:hover .dropdown-level-one,
-header nav .dropdown *:focus .dropdown-level-one {
-  max-height: 50em;
-  border: 1px solid grey;
-  border-top: 0px;
-}
-
-header nav .dropdown:hover .dropdown-arrow::before,
-header nav .dropdown *:focus .dropdown-arrow::before {
-  display: none;
-}
-
-header nav .dropdown:hover .dropdown-arrow::after,
-header nav .dropdown *:focus .dropdown-arrow::after {
-  display: inline;
-}
-
-header .black-bg-mobile {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.3);
-}
-
 header .search {
   background: lightgrey;
   border-radius: 20px;
@@ -286,6 +222,124 @@ header .search button {
 
 header .search button:hover {
   color: black;
+}
+
+header nav.desktop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+}
+
+header nav.desktop .dropdown {
+  position: relative;
+  height: 100%;
+  line-height: 10vh;
+}
+
+header nav.desktop .dropdown-level-one {
+  position: absolute;
+  top: 10vh;
+  left: -14em;
+}
+
+header nav.desktop .dropdown:hover .dropdown-level-one,
+header nav.desktop .dropdown *:focus .dropdown-level-one {
+  max-height: 50em;
+  border: 1px solid grey;
+  border-top: 0px;
+}
+
+header nav.desktop .dropdown:hover .dropdown-arrow::before,
+header nav.desktop .dropdown *:focus .dropdown-arrow::before {
+  display: none;
+}
+
+header nav.desktop .dropdown:hover .dropdown-arrow::after,
+header nav.desktop .dropdown *:focus .dropdown-arrow::after {
+  display: inline;
+}
+
+header .menu-burger {
+  display: none;
+  height: 90%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+header .menu-close {
+  display: none;
+  height: 8vh;
+  margin-top: 1vh;
+  margin-left: calc(100% - 8vh - 2vw);
+  margin-right: 2vw;
+}
+
+header nav.mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  background: white;
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+}
+
+header nav.mobile.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+header nav.mobile .menu {
+  line-height: 2.5;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+header nav.mobile .dropdown .dropdown-item {
+  border-top: 1px solid grey;
+  padding: 0 1em;
+}
+
+header nav.mobile .dropdown .dropdown-level-two .dropdown-item {
+  border-top: 0;
+}
+
+header nav.mobile .dropdown.active .dropdown-level-one {
+  max-height: 50em;
+}
+
+header nav.mobile .dropdown.active .dropdown-arrow::before {
+  display: none;
+}
+
+header nav.mobile .dropdown.active .dropdown-arrow::after {
+  display: inline;
+}
+
+header .black-bg-mobile {
+  display: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+header .black-bg-mobile.active {
+  display: block;
 }
 
 .main {
@@ -321,5 +375,89 @@ header .search button:hover {
 .pdf-big-size {
   width: 100%;
   height: 80vh;
+}
+
+@media screen and (max-width: 1000px) {
+  .lightning {
+    display: none;
+  }
+  header .menu {
+    font-size: 14px;
+  }
+  header .logo {
+    margin-left: 0;
+  }
+  header .menu-burger {
+    display: inline-block;
+  }
+  header .menu-close {
+    display: inline-block;
+  }
+  header .search {
+    margin-right: 0;
+    margin-left: auto;
+  }
+  header .search * {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  header nav.desktop {
+    display: none;
+  }
+  header nav.mobile {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 545px) {
+  header nav.mobile .menu {
+    font-size: 10px;
+  }
+  header .logo {
+    display: none;
+  }
+  header .logo-mobile {
+    display: inline-block;
+  }
+  header .search {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .search * {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    vertical-align: middle;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  header nav.mobile .menu {
+    font-size: 8px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  header {
+    font-size: 22px !important;
+  }
+  header .menu {
+    font-size: 22px !important;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  header {
+    font-size: 28px !important;
+  }
+  header .menu {
+    font-size: 28px !important;
+  }
 }
 /*# sourceMappingURL=main.css.map */

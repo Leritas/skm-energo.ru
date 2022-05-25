@@ -1,11 +1,36 @@
-.lep {
-    width: 100%;
-    height: 85vh;
-  
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      pointer-events: none;
-    }
+// lightnings for home page
+
+.lightning {
+  position: absolute;
+  z-index: 9;
+
+  img {
+    height: 40vh;
+    pointer-events: none;
+    user-select: none;
   }
+
+  &.left {
+    left: -50px;
+    top: -20px;
+  }
+
+  &.right {
+    top: -10px;
+    right: 0;
+  }
+}
+
+// start of jumbotrone
+
+.lep {
+  width: 100%;
+  height: 85vh;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+}
