@@ -7,11 +7,11 @@ const navMobile = document.querySelector('nav.mobile')
 const dropdownMobile = navMobile.querySelector('.dropdown')
 
 logo.addEventListener('click', () => {
-    window.location.replace('/')
+    window.location.assign('/')
 })
 
-logoMobile.addEventListener('click', () => {
-    window.location.replace('/')
+logoMobile.addEventListener('click', () => {    
+    window.location.assign('/')
 })
 
 

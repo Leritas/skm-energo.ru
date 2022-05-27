@@ -244,13 +244,15 @@ header nav.desktop .dropdown-level-one {
   position: absolute;
   top: 10vh;
   left: -14em;
+  border: 1px solid grey;
+  border-top: 0px;
+  border-bottom: 0px;
 }
 
 header nav.desktop .dropdown:hover .dropdown-level-one,
 header nav.desktop .dropdown *:focus .dropdown-level-one {
   max-height: 50em;
-  border: 1px solid grey;
-  border-top: 0px;
+  border-bottom: 1px solid grey;
 }
 
 header nav.desktop .dropdown:hover .dropdown-arrow::before,

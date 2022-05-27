@@ -232,6 +232,9 @@ header {
         position: absolute;
         top: 10vh;
         left: -14em;
+        border: 1px solid grey;
+        border-top: 0px;
+        border-bottom: 0px;
       }
 
       // hover on dropdown calling element opens level-one and change arrow
@@ -240,8 +243,7 @@ header {
 
         .dropdown-level-one {
           max-height: 50em;
-          border: 1px solid grey;
-          border-top: 0px;
+          border-bottom: 1px solid grey;
         }
 
         .dropdown-arrow {
