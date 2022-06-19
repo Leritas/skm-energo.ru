@@ -18,15 +18,17 @@ router.get('/', (req, res) => {
 
 router.get('/:childUrl', (req, res) => {
     let queryUrl = `SELECT * FROM links WHERE url='${req.params.childUrl}';`
+    let toTitle = ''
     pool.connect((err, client, done) => {
         if (err) throw err;
         client.query(queryUrl, (err, res) => {
             console.log(res.rows);
+            toTitle = 'jj'
             done()
         })
     })
     res.render('mersen', {
-        title: `${toTitle} | СКМ-Энергосервис`,
+        title: `${ toTitle }| СКМ-Энергосервис`,
         renderAll: false
     })
 })
